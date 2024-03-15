@@ -1,0 +1,61 @@
+<div class="container shadow p-1 mt-5 bg-body-tertiary rounded">
+  <div class="col text-center">
+   <h1>Contact us</h1> 
+  </div>
+  
+  <form [formGroup]="contacForm" class="row m-5 g-3 needs-validation" novalidate (submit)="enviar($event)">
+    <div class="col-md-6">
+      <label for="validationCustom02" class="form-label">Name</label>
+      <input type="text" class="form-control" id="validationCustom02" value="" formControlName="name"
+        [ngClass]="{'is-invalid' : hasErrors('email', 'required') || hasErrors('email', 'email')}">
+      @if (hasErrors('name', 'required')){
+      <span class="text-danger">You have to complete this field</span>
+      }
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom01" class="form-label">Email</label>
+      <input type="email" class="form-control" id="validationCustom01" value="" formControlName="email"
+      [ngClass]="{'is-invalid' : hasErrors('email', 'required') || hasErrors('email', 'email')}">
+      @if (hasErrors('email', 'required')){
+      <span class="text-danger">You have to complete this field</span>
+      }
+      @if (hasErrors('email', 'email')){
+      <span class="text-danger">Ivalid email format</span>
+      }
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">City</label>
+      <input type="text" class="form-control" id="validationCustom03" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom04" class="form-label">State</label>
+      <select class="form-select" id="validationCustom04" required>
+        <option selected disabled value="">Choose...</option>
+        <option>Argentina</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Send</button>
+    </div>
+  </form>
+</div>

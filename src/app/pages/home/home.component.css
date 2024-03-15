@@ -1,0 +1,10 @@
+.carousel-item img {
+    width: 100%;
+    height: 100vh; /* Tamaño de la pantalla vertical */
+    object-fit: cover; /* Escalar y recortar la imagen para ajustarse */
+}
+.container{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}

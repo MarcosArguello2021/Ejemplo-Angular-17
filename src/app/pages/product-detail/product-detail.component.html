@@ -1,0 +1,23 @@
+<div class="container">
+    @if (loading){
+    <div class="spinner-grow text-light" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+
+    }
+
+    @if (!loading){
+    <div class="container m-5">
+        <div class="card" style="width: 18rem;">
+            <img src="{{product?.image}}" class="card-img-top" alt="{{product?.title}}">
+            <div class="card-body">
+                <h4 class="card-title">{{product?.title}}</h4>
+                <h6>{{product?.description}}</h6>
+                <p class="card-text">{{product?.price | currency}}</p>
+                <a href="#" class="btn btn-primary">Buy</a>
+            </div>
+        </div>
+    </div>
+    }
+
+</div>
